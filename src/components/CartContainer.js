@@ -1,6 +1,8 @@
 import React from "react";
 import CartItem from "./CartItem";
-const CartContainer = ({ cart = [] }) => {
+import {connect} from 'react-redux'
+
+const CartContainer = ({ cart = [], total }) => {
   if (cart.length === 0) {
     return (
       <section className="cart">
@@ -29,7 +31,7 @@ const CartContainer = ({ cart = [] }) => {
         <hr />
         <div className="cart-total">
           <h4>
-            total <span>$0.00</span>
+            total <span>${total}</span>
           </h4>
         </div>
         <button className="btn clear-btn">clear cart</button>
@@ -38,4 +40,9 @@ const CartContainer = ({ cart = [] }) => {
   );
 };
 
-export default CartContainer;
+const mapStateProps = (store) => {
+  const {cart, total} = store
+  console.log(store.cart)
+  return {cart: cart, total: total}
+}
+export default connect(mapStateProps)(CartContainer);
