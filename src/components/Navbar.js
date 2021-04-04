@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux'
 
-const Navbar = ({amount}) => {
+const Navbar = ({amount}) => { // Navbar is taking props which comes from state connected by connect 
  
   return (
     <nav>
@@ -20,8 +20,10 @@ const Navbar = ({amount}) => {
   );
 };
 
-const mapStateToProps = (state) => {
+
+const mapStateToProps = (state) => { // access state and set it as an object to return 
   console.log(state)
-  return {amount:state.amount} // assign state which is taken as an argument to amount property
+  return {amount:state.amount} 
 }
-export default connect(mapStateToProps)(Navbar);
+
+export default connect(mapStateToProps)(Navbar); // connect the object created by mapStateToProps to Navbar component
