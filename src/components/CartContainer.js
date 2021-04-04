@@ -41,8 +41,8 @@ const CartContainer = ({cart = [], total, dispatch}) => {
   );
 };
 
-const mapStateProps = (store) => { // taking state as an argument. map dispatch as props as well
+const mapStateToProps = (store) => { // taking state as an argument. map dispatch as props as well
   const {cart, total} = store
   return {cart: cart, total: total}
 }
-export default connect(mapStateProps)(CartContainer);
+export default connect(mapStateToProps)(CartContainer);
