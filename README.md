@@ -1,4 +1,4 @@
-this is one of the hands on app from John Smilga React course on Udemy
+this is one of the hands on app from John Smilga React course on Udemy - 
 the implementation of the nice cart function which you might see on a EC site
 
 ###### Purpose for it
